@@ -50,7 +50,7 @@ case "${MODE}" in
     ;;
 esac
 
-if [[ "${REWRITE_PLUGIN_VERSION}" == "6.46.1" ]]; then
+if [[ ! "${REWRITE_PLUGIN_VERSION}" =~ ^[0-9]+(\.[0-9]+)+$ ]]; then
   echo "ERROR: REWRITE_PLUGIN_VERSION is not set in ${CONV_DIR}/rewrite.sh" >&2
   echo "       Run 'bash conventions/rewrite.sh latest', set the version, commit." >&2
   exit 1
